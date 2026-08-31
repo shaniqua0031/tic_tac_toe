@@ -7,6 +7,7 @@ import {
   checkDraw,
   getAIMove,
   isCellValid,
+  type Player,
   type Difficulty,
   type GameMode,
   type Score,
@@ -24,7 +25,7 @@ export function TicTacToe() {
   const [difficulty, setDifficulty] = useState<Difficulty>("medium");
 
   // Game state
-  const [board, setBoard] = useState<(string | null)[]>(createNewBoard());
+  const [board, setBoard] = useState<Player[]>(createNewBoard());
   const [currentPlayer, setCurrentPlayer] = useState<"X" | "O">("X");
   const [gameStatus, setGameStatus] = useState<
     "playing" | "playerWon" | "aiWon" | "draw"
